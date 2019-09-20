@@ -14,15 +14,15 @@ public class Main {
             DecimalFormat df = new DecimalFormat("#.00");
             System.out.println("Для получения большего количеста бонусов рекомендуем докупить товар на сумму: " + (df.format(difference)));
         }
-
+        int totalAmount = 1000;
         if (allPurchase > 1 && allPurchase <= 15000) {
-            double bonus = Math.floor(allPurchase / 1000) * 50;
+            double bonus = Math.floor(allPurchase / totalAmount) * 50;
             System.out.println("Вы получите бонусов: " + bonus);
         } else if (allPurchase >= 15001 && allPurchase <= 150000) {
-            double bonus = Math.floor(allPurchase / 1000) * 70;
+            double bonus = Math.floor(allPurchase / totalAmount) * 70;
             System.out.println("Вы получите бонусов: " + bonus);
         } else if (allPurchase > 150000) {
-            double bonus = Math.floor(allPurchase / 1000) * 100;
+            double bonus = Math.floor(allPurchase / totalAmount) * 100;
             System.out.println("Вы получите бонусов: " + bonus);
         }
 
