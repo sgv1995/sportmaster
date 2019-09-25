@@ -8,19 +8,23 @@ public class Main {
         System.out.println("Введите сумму последней покупки:");
         int currentPurchase = in.nextInt();
         int allPurchase = previousPurchases + currentPurchase;
-        int difference = 1000 - allPurchase % 1000;
-        if (difference < 200) {
+        int bonusAccrual = 1000;
+        int bonusWarning = 200;
+        int minimumBonus = 50;
+        int averageBonus = 70;
+        int maximumBonus = 100;
+        int difference = bonusAccrual - allPurchase % bonusAccrual;
+        if (difference < bonusWarning) {
             System.out.println("Для получения большего количеста бонусов рекомендуем докупить товар на сумму: " + difference);
         }
-        int totalAmount = 1000;
         if (allPurchase > 1 && allPurchase <= 15000) {
-            int bonus = allPurchase / totalAmount * 50;
+            int bonus = allPurchase / bonusAccrual * minimumBonus;
             System.out.println("Вы получите бонусов: " + bonus);
         } else if (allPurchase >= 15001 && allPurchase <= 150000) {
-            int bonus = allPurchase / totalAmount * 70;
+            int bonus = allPurchase / bonusAccrual * averageBonus;
             System.out.println("Вы получите бонусов: " + bonus);
         } else if (allPurchase > 150000) {
-            int bonus = allPurchase / totalAmount * 100;
+            int bonus = allPurchase / bonusAccrual * maximumBonus;
             System.out.println("Вы получите бонусов: " + bonus);
         }
 
