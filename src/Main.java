@@ -17,13 +17,18 @@ public class Main {
         if (difference < bonusWarning) {
             System.out.println("Для получения большего количеста бонусов рекомендуем докупить товар на сумму: " + difference);
         }
-        if (allPurchase > 1 && allPurchase <= 15000) {
+        int startMinimumBonus = 1;
+        int finishMinimumBonus = 15000;
+        int startAverageBonus = 15001;
+        int finishAverageBonus = 150000;
+        int startMaximumBonus = 150000;
+        if (allPurchase > startMinimumBonus && allPurchase <= finishMinimumBonus) {
             int bonus = allPurchase / bonusAccrual * minimumBonus;
             System.out.println("Вы получите бонусов: " + bonus);
-        } else if (allPurchase >= 15001 && allPurchase <= 150000) {
+        } else if (allPurchase >= startAverageBonus && allPurchase <= finishAverageBonus) {
             int bonus = allPurchase / bonusAccrual * averageBonus;
             System.out.println("Вы получите бонусов: " + bonus);
-        } else if (allPurchase > 150000) {
+        } else if (allPurchase > startMaximumBonus) {
             int bonus = allPurchase / bonusAccrual * maximumBonus;
             System.out.println("Вы получите бонусов: " + bonus);
         }
